@@ -10,6 +10,14 @@ registerScreens(Provider, store);
 
 export const start = () => {
   Navigation.events().registerAppLaunchedListener(() => {
+    Navigation.setDefaultOptions({
+      topBar: {
+        background: {
+          color: '#710389'
+        }
+      },
+      statusBarStyle: 'light'
+    })
     Navigation.setRoot({
       root: {
         stack: {
@@ -19,21 +27,18 @@ export const start = () => {
                 name: 'HomeScreen',
                 options: {
                   topBar: {
-                    background: {
-                      color: '#fbfbfb'
-                    },
                     title: {
                       text: 'MediaMonks',
                       fontSize: 16,
-                      color: '#161616',
+                      color: '#fff',
                       fontFamily: 'Helvetica',
-                      fontWeight: 'regular', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
+                      fontWeight: 'bold', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
                       alignment: 'center'
                     },
                     subtitle: {
                       text: 'Challenge',
                       fontSize: 14,
-                      color: '#7d7d7d',
+                      color: '#fff',
                       fontFamily: 'Helvetica',
                       fontWeight: 'regular', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
                       alignment: 'center'
@@ -56,27 +61,25 @@ export const pushScreen = props => {
       name: 'PushedScreen',
       options: {
         topBar: {
-          background: {
-            color: '#fbfbfb'
-          },
           title: {
             text: 'MediaMonks',
             fontSize: 16,
-            color: '#161616',
+            color: '#fff',
             fontFamily: 'Helvetica',
-            fontWeight: 'regular', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
+            fontWeight: 'bold', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
             alignment: 'center'
           },
           subtitle: {
             text: 'PushedScreen',
             fontSize: 14,
-            color: '#7d7d7d',
+            color: '#fff',
             fontFamily: 'Helvetica',
             fontWeight: 'regular', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
             alignment: 'center'
           },
           backButton: {
-            title: 'Back'
+            title: 'Back',
+            color: '#fff',
           },
         }
       }
@@ -92,27 +95,25 @@ export const PostsScreen = props => {
       name: 'Posts',
       options: {
         topBar: {
-          background: {
-            color: '#fbfbfb'
-          },
           title: {
             text: 'MediaMonks',
             fontSize: 16,
-            color: '#161616',
+            color: '#fff',
             fontFamily: 'Helvetica',
-            fontWeight: 'regular', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
+            fontWeight: 'bold', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
             alignment: 'center'
           },
           subtitle: {
             text: 'Posts',
             fontSize: 14,
-            color: '#7d7d7d',
+            color: '#fff',
             fontFamily: 'Helvetica',
             fontWeight: 'regular', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
             alignment: 'center'
           },
           backButton: {
-            title: 'Back'
+            title: 'Back',
+            color: '#fff',
           },
         }
       }
@@ -134,16 +135,19 @@ export const openPostDetail = (props, data) => {
             },
             options: {
               topBar: {
-                background: {
-                  color: '#fbfbfb'
-                },
                 title: {
                   text: (data.title.length>20 ? `${data.title.substr(0,20)} ...` : data.title),
+                  fontSize: 16,
+                  color: '#fff',
+                  fontFamily: 'Helvetica',
+                  fontWeight: 'bold', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
+                  alignment: 'center'
                 },
                 leftButtons: [
                   {
                     text: 'Close',
                     id: 'leftButton',
+                    color: '#fff',
                     //icon: require('../../assets/close.png'),
                   },
                 ],
@@ -163,27 +167,25 @@ export const AlbumScreen = props => {
       name: 'Albums',
       options: {
         topBar: {
-          background: {
-            color: '#fbfbfb'
-          },
           title: {
             text: 'MediaMonks',
             fontSize: 16,
-            color: '#161616',
+            color: '#fff',
             fontFamily: 'Helvetica',
-            fontWeight: 'regular', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
+            fontWeight: 'bold', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
             alignment: 'center'
           },
           subtitle: {
             text: 'Albums',
             fontSize: 14,
-            color: '#7d7d7d',
+            color: '#fff',
             fontFamily: 'Helvetica',
             fontWeight: 'regular', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
             alignment: 'center'
           },
           backButton: {
-            title: 'Back'
+            title: 'Back',
+            color: '#fff',
           },
         }
       }
@@ -205,27 +207,25 @@ export const PhotosScreen = (props, id, title) => {
       },
       options: {
         topBar: {
-          background: {
-            color: '#fbfbfb'
-          },
           title: {
             text: 'MediaMonks',
             fontSize: 16,
-            color: '#161616',
+            color: '#fff',
             fontFamily: 'Helvetica',
-            fontWeight: 'regular', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
+            fontWeight: 'bold', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
             alignment: 'center'
           },
           subtitle: {
             text: (title.length>20 ? `${title.substr(0,20)} ...` : title),
             fontSize: 14,
-            color: '#7d7d7d',
+            color: '#fff',
             fontFamily: 'Helvetica',
             fontWeight: 'regular', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
             alignment: 'center'
           },
           backButton: {
-            title: 'Back'
+            title: 'Back',
+            color: '#fff',
           },
         }
       }
@@ -247,6 +247,11 @@ export const openModal = () => {
               topBar: {
                 title: {
                   text: 'Title text',
+                  fontSize: 16,
+                  color: '#fff',
+                  fontFamily: 'Helvetica',
+                  fontWeight: 'regular', // Available on iOS only, will ignore fontFamily style and use the iOS system fonts instead. Supported weights are: 'regular', 'bold', 'thin', 'ultraLight', 'light', 'medium', 'semibold', 'heavy' and 'black'.
+                  alignment: 'center'
                 },
                 leftButtons: [
                   {

@@ -55,8 +55,8 @@ const Albums = props => {
               key={i}
               title={l.title}
               leftIcon={{
-                name: 'ios-folder',
-                type: 'ionicon',
+                name: 'folder-images',
+                type: 'entypo',
                 color: getRandomColor(),
                 size: 35,
               }}

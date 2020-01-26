@@ -1,11 +1,12 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, StatusBar} from 'react-native';
 import {pushScreen, openModal, AlbumScreen, PostsScreen} from 'Navigation';
 import styles from './styles';
 
 const Home = props => {
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="light-content" />
       <View style={styles.buttonsSection}>
 
         <TouchableOpacity

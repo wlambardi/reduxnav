@@ -4,7 +4,7 @@ import { Navigation } from 'react-native-navigation';
 import { useSelector, useDispatch } from 'react-redux';
 import { retrieveComments } from '../../store/actions/comments';
 import Loader from '../../util/Loader';
-import { ListItem, Card } from 'react-native-elements';
+import { ListItem, Divider } from 'react-native-elements';
 import LottieError from '../../util/LottieError';
 import styles from './styles';
 import { w, h, totalSize } from '../../util/Dimensions';
@@ -32,15 +32,21 @@ const comments = props => {
         return color;
     }
 
+    function length(obj) {
+      return Object.keys(obj).length;
+    }
+
     if (dataSource.error) {
         return <LottieError />;
       } else {
         if (dataSource.loadingComments) {
-          return <Loader />;
+          return <Loader tipo='comments' size='small'/>;
         } else {
           if (dataSource.comments !== null ) {
           return (
             <View>
+              <Divider style={styles.divider} />
+              <Text style={styles.mTitleComments}> Comments ({length(dataSource.comments)})</Text>
               {
                 dataSource.comments.map((l, i) => (
                 <ListItem
@@ -49,7 +55,7 @@ const comments = props => {
                   //titleStyle={styles.albumTitle}
                   key={i}
                   title={l.name}
-                  titleStyle={{color:'black'}}
+                  titleStyle={{color:'black', fontWeight:'bold'}}
                   subtitle={`${l.email}\n\n${l.body}`}
                   /*leftIcon={{
                     name: 'comment',
@@ -57,7 +63,8 @@ const comments = props => {
                     color: getRandomColor(),
                     size: 35,
                   }}*/
-                  bottomDivider
+                  //bottomDivider
+                  //topDivider
                 />
               ))}
             </View>

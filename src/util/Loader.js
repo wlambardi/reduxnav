@@ -1,10 +1,14 @@
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, View, Text } from 'react-native';
 import { w } from './Dimensions';
 import LottieView from 'lottie-react-native';
 
 const Loader = props => {
-  //const { loading, ...attributes } = props;
+
+  useEffect(() => {
+    const tipo = JSON.stringify(props.tipo);
+    const size = JSON.stringify(props.size);
+  });
 
   return (
     <View style={styles.container}>
@@ -12,11 +16,11 @@ const Loader = props => {
         loop={true}
         autoPlay={true}
         style={{
-          width: w(60),
-          height: w(60),
+          width: props.size=='small' ? w(20) : w(60),
+          height: props.size=='small' ? w(20) : w(60),
           backgroundColor: 'transparent',
         }}
-        source={require('../../assets/lotties/loading3.json')}
+        source={ props.tipo=='comments' ? require('../../assets/lotties/loadingComments.json') : require('../../assets/lotties/loading.json')}
       />
     </View>
   );
