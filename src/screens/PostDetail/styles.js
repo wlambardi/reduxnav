@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     alignContent:'center',
   },
   mTitle: {
-    fontSize: 18,
+    fontSize: 20,
     padding:w(5),
     paddingBottom:w(0),
     fontWeight:'bold',
