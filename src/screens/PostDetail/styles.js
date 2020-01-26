@@ -5,13 +5,21 @@ import { w, h } from '../../util/Dimensions';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    width:w(100),
     backgroundColor: 'white',
+    alignContent:'center',
+  },
+  mTitle: {
+    fontSize: 18,
+    padding:w(5),
+    paddingBottom:w(0),
+    fontWeight:'bold',
+    color:'#2D2D2D',
   },
   mText: {
     fontSize: 18,
-    paddingBottom:15,
-    color:'#999999',
+    padding:w(5),
+    color:'#2D2D2D',
   },
   cardContainer:{
     borderWidth:0,
