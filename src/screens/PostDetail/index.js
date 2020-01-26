@@ -33,7 +33,8 @@ class ModalScreen extends Component {
 
         <Text style={styles.mText}>{body}</Text>    
 
-        <Comments/>
+        <Text style={styles.mTitle}>Comments</Text> 
+        <Comments postId={id}/>
         
         <View style={{alignItems:'center'}}>
         <Button

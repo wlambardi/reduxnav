@@ -9,17 +9,17 @@ import LottieError from '../../util/LottieError';
 import styles from './styles';
 import { w, h, totalSize } from '../../util/Dimensions';
 
-const comments = () => {
+const comments = props => {
 
     const dataSource = useSelector(state => state.comments);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        //console.log('props',JSON.stringify(props));
+        console.log('props',JSON.stringify(props));
         //console.log('item',JSON.stringify(props.item));
         //console.log('title',JSON.stringify(props.title));
-        //const itemId = JSON.stringify(props.item);
-        dispatch(retrieveComments(1));
+        const postId = JSON.stringify(props.postId);
+        dispatch(retrieveComments(postId));
     }, [dispatch]);
 
 
@@ -40,7 +40,7 @@ const comments = () => {
         } else {
           if (dataSource.comments !== null ) {
           return (
-            <Card title="Comments">
+            <View>
               {
                 dataSource.comments.map((l, i) => (
                 <ListItem
@@ -50,17 +50,17 @@ const comments = () => {
                   key={i}
                   title={l.name}
                   titleStyle={{color:'black'}}
-                  subtitle={l.email}
-                  leftIcon={{
+                  subtitle={`${l.email}\n\n${l.body}`}
+                  /*leftIcon={{
                     name: 'comment',
                     type: 'fontawesome',
                     color: getRandomColor(),
                     size: 35,
-                  }}
+                  }}*/
                   bottomDivider
                 />
               ))}
-            </Card>
+            </View>
           );
           }else{
             return <LottieError />;

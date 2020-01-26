@@ -10,15 +10,15 @@ const styles = StyleSheet.create({
     alignContent:'center',
   },
   mTitle: {
-    fontSize: 20,
-    padding:w(5),
+    fontSize: 18,
+    padding:w(3),
     paddingBottom:w(0),
     fontWeight:'bold',
     color:'#2D2D2D',
   },
   mText: {
-    fontSize: 18,
-    padding:w(5),
+    fontSize: 16,
+    padding:w(3),
     color:'#2D2D2D',
   },
   cardContainer:{
