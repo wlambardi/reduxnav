@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { w } from './Dimensions';
+import { w, h } from './Dimensions';
 import LottieView from 'lottie-react-native';
 
 const Loader = props => {
@@ -16,11 +16,11 @@ const Loader = props => {
         loop={true}
         autoPlay={true}
         style={{
-          width: props.size=='small' ? w(20) : w(60),
-          height: props.size=='small' ? w(20) : w(60),
+          width: props.size=='small' ? w(50) : w(40),
+          height: props.size=='small' ? w(50) : h(40),
           backgroundColor: 'transparent',
         }}
-        source={ props.tipo=='comments' ? require('../../assets/lotties/loadingComments.json') : require('../../assets/lotties/loading.json')}
+        source={ props.tipo=='comments' ? require('../../assets/lotties/14718-dot-loader.json') : require('../../assets/lotties/loading.json')}
       />
     </View>
   );
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
+    //backgroundColor: 'white',
   },
 });
 

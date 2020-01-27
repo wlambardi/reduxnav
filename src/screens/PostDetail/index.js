@@ -36,6 +36,9 @@ class ModalScreen extends Component {
         <Comments postId={id}/>
         
         <View style={{alignItems:'center'}}>
+        
+        {
+          /* 
         <Button
           icon={<Icon
             name='close'
@@ -46,6 +49,9 @@ class ModalScreen extends Component {
           buttonStyle={{borderRadius: 5, marginLeft: 0, marginRight: 0, marginTop: 20,marginBottom: 20, width:200}}
           title='CLOSE DIALOG'
         />
+          */
+        }
+        
         </View>
           
       </ScrollView>

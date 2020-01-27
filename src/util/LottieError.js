@@ -12,8 +12,8 @@ const LottieError = props => {
         loop={true}
         autoPlay={true}
         style={{
-          width: w(80),
-          height: w(80),
+          width: w(60),
+          height: w(60),
           backgroundColor: 'transparent',
         }}
         source={require('../../assets/lotties/error.json')}
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
+    //backgroundColor: '#FFFFFF',
   },
   title: {
     paddingTop:w(10),
